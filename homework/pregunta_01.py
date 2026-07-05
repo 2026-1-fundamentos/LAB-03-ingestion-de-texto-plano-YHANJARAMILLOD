@@ -8,8 +8,6 @@ import re
 import pandas as pd
 
 
-
-
 def pregunta_01():
     datos = []
     cluster_actual = None
@@ -22,7 +20,7 @@ def pregunta_01():
               # 2. Intentar buscar el inicio de una fila real usando Regex
               # Busca: [Número] -> [Número] -> [Porcentaje] -> [El resto del texto]
             patron_inicio = re.match(
-                r"^\s*(\d+)\s+(\d+)\s+(\d+,\d+)\s+(.*)", linea
+                r"^\s*(\d+)\s+(\d+)\s+(\d+,\d+)\s*%\s+(.*)", linea
             )
             if patron_inicio:
                 # Si ya estábamos procesando un cluster anterior, lo guardamos
@@ -33,7 +31,7 @@ def pregunta_01():
                 cluster_actual = {
                     "cluster": int(patron_inicio.group(1)),
                     "cantidad_de_palabras_clave": int(patron_inicio.group(2)),
-                    "porcentaje_de_palabras_clave": patron_inicio.group(3).strip(),
+                    "porcentaje_de_palabras_clave": patron_inicio.group(3).strip().replace(",", "."),
                     "principales_palabras_clave": patron_inicio.group(
                         4
                     ).strip(),
