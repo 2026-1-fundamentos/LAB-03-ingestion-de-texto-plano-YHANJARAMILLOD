@@ -22,7 +22,7 @@ def pregunta_01():
               # 2. Intentar buscar el inicio de una fila real usando Regex
               # Busca: [Número] -> [Número] -> [Porcentaje] -> [El resto del texto]
             patron_inicio = re.match(
-                r"^\s*(\d+)\s+(\d+)\s+(\d+,\d+\s*%)\s+(.*)", linea
+                r"^\s*(\d+)\s+(\d+)\s+(\d+,\d+)\s+(.*)", linea
             )
             if patron_inicio:
                 # Si ya estábamos procesando un cluster anterior, lo guardamos
