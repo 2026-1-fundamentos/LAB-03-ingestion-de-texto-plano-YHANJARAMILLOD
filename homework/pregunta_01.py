@@ -31,7 +31,7 @@ def pregunta_01():
                 cluster_actual = {
                     "cluster": int(patron_inicio.group(1)),
                     "cantidad_de_palabras_clave": int(patron_inicio.group(2)),
-                    "porcentaje_de_palabras_clave": patron_inicio.group(3).strip().replace(",", "."),
+                    "porcentaje_de_palabras_clave": float(patron_inicio.group(3).strip().replace(",", ".")),
                     "principales_palabras_clave": patron_inicio.group(
                         4
                     ).strip(),
