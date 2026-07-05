@@ -32,7 +32,7 @@ def pregunta_01():
                 # Creamos el diccionario para el nuevo cluster
                 cluster_actual = {
                     "cluster": int(patron_inicio.group(1)),
-                    "cantidad_palabras": int(patron_inicio.group(2)),
+                    "cantidad_de_palabras_clave": int(patron_inicio.group(2)),
                     "porcentaje": patron_inicio.group(3).strip(),
                     "principales_palabras_clave": patron_inicio.group(
                         4
