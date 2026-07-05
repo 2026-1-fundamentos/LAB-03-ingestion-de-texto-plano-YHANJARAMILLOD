@@ -56,7 +56,7 @@ def pregunta_01():
     # Limpieza final por si quedaron dobles espacios dentro del texto acumulado
     df["principales_palabras_clave"] = df[
         "principales_palabras_clave"
-    ].str.replace(r"\s+", " ", regex=True)
+    ].str.replace(r"\s+", " ", regex=True).str.rstrip(".")
     
 
     return df
